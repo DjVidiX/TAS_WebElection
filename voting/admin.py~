@@ -1,0 +1,4 @@
+from django.contrib import admin
+from voting import Kandydat
+
+admin.site.register(Kandydat)

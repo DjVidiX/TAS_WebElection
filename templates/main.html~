@@ -16,7 +16,7 @@
 {% for kandydat in lista_kandydatow %}
 <div class="cs_article">
 	<div class="slider_image_wrapper"><span></span>                    	
-		<img src="{{ kandydat.zdjecie }}" alt="slider image 1" />
+		<img src="static/images/slider/{{ kandydat.zdjecie }}" alt="slider image 1" />
         </div>                    
         <div class="cs_article_des"> 
 

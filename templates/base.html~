@@ -10,32 +10,6 @@
     <title>{% block title %} Elektroniczne wybory {% endblock %} </title>
 
     {% include "base_style.html" %}
-    
-    
-</script>
-
-<script type="text/javascript">
-
-ddsmoothmenu.init({
-	mainmenuid: "templatemo_menu", //menu DIV id
-	orientation: 'h', //Horizontal or vertical menu: Set to "h" or "v"
-	classname: 'ddsmoothmenu', //class added to menu's outer DIV
-	//customtheme: ["#1c5a80", "#18374a"],
-	contentsource: "markup" //"markup" or ["container_id", "path_to_menu_file"]
-})
-
-</script> 
-
-<link href="static/css/jquery.ennui.contentslider.css" rel="stylesheet" type="text/css" media="screen,projection" />
-
-<script language="javascript" type="text/javascript">
-function clearText(field)
-{
-    if (field.defaultValue == field.value) field.value = '';
-    else if (field.value == '') field.value = field.defaultValue;
-
-}
-</script>
 
 </head>
 <body>

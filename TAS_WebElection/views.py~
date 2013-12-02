@@ -6,7 +6,7 @@ def home(request):
     candidates = []
     for cand in Kandydat.objects.all():
         candidates.append({'zdjecie':cand.zdjecie, 'imie':cand.imie, 'nazwisko':cand.nazwisko}) 
-    return render_to_response('main.html', {'lista_kandydatow': candidates})
+    return render_to_response('main.html', {'lista_kandydatow', candidates})
 
 
 def candidates(request):
