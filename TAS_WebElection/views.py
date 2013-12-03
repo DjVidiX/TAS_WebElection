@@ -1,5 +1,5 @@
 # -*- coding: UTF-8 -*- 
-
+from django.shortcuts import render_to_response
 from TAS_WebElection.views import *
 from voting.models import Kandydat
 
