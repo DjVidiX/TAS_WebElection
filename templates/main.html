@@ -18,12 +18,12 @@
 	<div class="slider_image_wrapper"><span></span>                    	
 		<img src="{{ kandydat.zdjecie }}" alt="slider image 1" />
         </div>                    
-        <div class="cs_article_des"> 
+        <div class="cs_article_des">
 
-                <h2>{{ kandydat.imie }}</h2>
- 		<h2>{{ kandydat.nazwisko }}</h2>
-                <p>Aliquam erat volutpat aecenas eget nisl id nisi consequat ultrices. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium. <em>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur.</em></p>
-                <a class="more float_r" href="static/#"><span>Details</span></a>
+            <h2>{{ kandydat.imie }} {{ kandydat.nazwisko }}</h2>
+
+            <p>{{ kandydat.haslo }}</p>
+            <a class="more float_r" href="kandydaci#{{ kandydat.nazwisko }}"><span>Details</span></a>
         </div>                          
 </div><!-- End cs_article -->               
 

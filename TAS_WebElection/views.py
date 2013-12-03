@@ -1,13 +1,13 @@
 # -*- coding: UTF-8 -*- 
 
-from django.shortcuts import render_to_response
 from TAS_WebElection.views import *
 from voting.models import Kandydat
 
 def home(request):
     candidates = []
     for cand in Kandydat.objects.all():
-        candidates.append({'zdjecie':cand.zdjecie, 'imie':cand.imie, 'nazwisko':cand.nazwisko}) 
+        candidates.append(
+            {'zdjecie': cand.zdjecie, 'imie': cand.imie, 'nazwisko': cand.nazwisko, 'haslo': cand.haslo_wyborcze})
     return render_to_response('main.html', {'lista_kandydatow': candidates})
 
 
