@@ -94,12 +94,12 @@
 	float: left;
 	position: relative;
 	width: 410px;
-	height: 205px;
+	height: 250px;
 }
-.slider_image_wrapper span { position: absolute; width: 410px; height: 205px; background: url(../images/templatemo_image_frame_01.png) no-repeat; top: 0; left: 0;}
+.slider_image_wrapper span { position: absolute; width: 410px; height: 250px; background: url(../images/templatemo_image_frame_01.png) no-repeat; top: 0; left: 0;}
 .slider_image_wrapper img {
 	width: 410px;
-	height: 205px;
+	height: 250px;
 }
 
 .cs_leftBtn, .cs_rightBtn {
