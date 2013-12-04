@@ -197,10 +197,10 @@ em { color: #fff }
 
 .fwc_box {
 	width: 904px;
-	height: 198px;
-	margin: 0 auto;
+	height: 398px;
+	margin: 240px 0;
 	padding: 35px;
-	background: url(images/templatemo_box2.jpg) no-repeat
+    /*background: url(images/templatemo_box2.jpg) no-repeat*/
 }
 
 .box_w200 {
