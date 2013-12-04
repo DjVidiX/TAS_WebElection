@@ -36,8 +36,8 @@ def candidates(request):
     for cand in Kandydat.objects.all():
         candidates.append(
             {'id': cand.id, 'zdjecie': cand.zdjecie, 'imie': cand.imie, 'nazwisko': cand.nazwisko,
-             'haslo': cand.haslo_wyborcze})
-    return render_to_response('candidates.html', {'listahtml': candidates()})
+             'haslo': cand.haslo_wyborcze, 'partia': cand.partia_id})
+    return render_to_response('candidates.html', {'listahtml': candidates})
 
 
 def contact(request):
