@@ -3,8 +3,30 @@
 {% block title %} Home {% endblock %}
 
 {% block menu %}
-            <li><a href="index">Głosowanie</a></li>
-            <li><a href="kandydaci">Kandydaci</a></li>
-            <li><a href="kontakt" class="selected">Kontakt</a></li>
-            <li><a href="administrator">Admin</a></li>
-{% endblock %}.
+    <li><a href="index">Głosowanie</a></li>
+    <li><a href="kandydaci">Kandydaci</a></li>
+    <li><a href="kontakt" class="selected">Kontakt</a></li>
+    <li><a href="administrator">Admin</a></li>
+{% endblock %}
+
+{% block contact_form %}
+    <div class="templatemo_post">
+        <div id="contact_form">
+            {% if form.errors %}
+                <p style="color: red;">
+                    Please correct the error{{ form.errors|pluralize }} below.
+                </p>
+            {% endif %}
+            <form action="" method="post" name="contact">
+                <table>
+                    {{ form.as_table }}
+                </table>
+                {% csrf_token %}
+                <input type="submit" value="Wyślij">
+            </form>
+        </div>
+
+        <div class="cleaner"></div>
+    </div>
+
+{% endblock %}

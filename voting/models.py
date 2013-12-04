@@ -29,6 +29,7 @@ class Obywatel(models.Model):
     nazwisko = models.CharField(max_length=30)
     PESEL = models.CharField(max_length=11)
     nr_dowodu = models.CharField(max_length=9)
+    glosowal = models.BooleanField(False)
 
     def __unicode__(self):
         return self.imie + " " + self.nazwisko

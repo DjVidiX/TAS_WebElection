@@ -57,37 +57,46 @@
 {% endblock %}
 
 {% block vote_form %}
-    {% if errors %}
-        <h1>Wystąpiły problemy!!! </h1>
-        <ul>
-            {% for error in errors %}
-                <li>{{ error }}</li>
-            {% endfor %}
-        </ul>
+    {% if not message %}
+
+        {% if errors %}
+            <h1>Wystąpiły problemy!!! </h1>
+            <ul>
+                {% for error in errors %}
+                    <li>{{ error }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+
+        <h2>Oddaj głos</h2>
+        <div id="contact_form">
+            <form action="index" method="post">{% csrf_token %}
+                <p>Imie: <input type="text" name="firstName" class="input_field"></p>
+
+                <p>Nazwisko: <input type="text" name="lastName" class="input_field"></p>
+
+                <p>PESEL: <input type="text" name="pesel" class="input_field"></p>
+
+                <p>Nr dowodu: <input type="password" name="pass" class="input_field"></p>
+
+                <p>Kadydat:
+                    <select name="candidate">
+                        {% for kandydat in lista_kandydatow %}
+                            <option value="{{ kandydat.id }}"
+                                    class="combobox">{{ kandydat.imie }} {{ kandydat.nazwisko }}</option>
+                        {% endfor %}
+                    </select>
+                </p>
+                <p><input type="submit" value="Głosuj!" class="submit_btn"></p>
+            </form>
+        </div>
+
+    {% else %}
+
+        <h2>{{ message }} </h2>
+
     {% endif %}
 
-    <h2>Oddaj głos</h2>
-    <div id="contact_form">
-        <form action="index" method="post">{% csrf_token %}
-            <p>Imie: <input type="text" name="firstName" class="input_field"></p>
-
-            <p>Nazwisko: <input type="text" name="lastName" class="input_field"></p>
-
-            <p>PESEL: <input type="text" name="pesel" class="input_field"></p>
-
-            <p>Nr dowodu: <input type="password" name="pass" class="input_field"></p>
-
-            <p>Kadydat:
-                <select name="candidate">
-                    {% for kandydat in lista_kandydatow %}
-                        <option value="{{ kandydat.id }}"
-                                class="combobox">{{ kandydat.imie }} {{ kandydat.nazwisko }}</option>
-                    {% endfor %}
-                </select>
-            </p>
-            <p><input type="submit" value="Głosuj!" class="submit_btn"></p>
-        </form>
-    </div>
 {% endblock %}
 
 {% block results %}
@@ -96,10 +105,7 @@
         <div class="sb_box">
             {% for kandydat in lista_kandydatow %}
                 <p>{{ kandydat.imie }} {{ kandydat.nazwisko }}: {{ kandydat.glosy }} </p>
-
             {% endfor %}
-            Shit sit voluptatem accusantium dolore, mque laudantium, totam rem aperiam,aq ue ipsa quae ab illo inventore
-            veritatis et from the inside.
         </div>
         <div class="cleaner"></div>
     </div>
