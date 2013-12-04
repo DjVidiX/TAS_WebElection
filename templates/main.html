@@ -3,34 +3,44 @@
 {% block title %} Home {% endblock %}
 
 {% block menu %}
-            <li><a href="" class="selected">Głosowanie</a></li>
-            <li><a href="kandydaci">Kandydaci</a></li>
-            <li><a href="kontakt">Kontakt</a></li>
-            <li><a href="administrator">Admin</a></li>
+    <li><a href="" class="selected">Głosowanie</a></li>
+    <li><a href="kandydaci">Kandydaci</a></li>
+    <li><a href="kontakt">Kontakt</a></li>
+    <li><a href="administrator">Admin</a></li>
 {% endblock %}
 
 {% block slider %}
-{% for kandydat in lista_kandydatow %}
-<div class="cs_article">
-	<div class="slider_image_wrapper"><span></span>                    	
-		<img src="{{ kandydat.zdjecie }}" alt="slider image 1" />
-        </div>                    
-        <div class="cs_article_des">
+    {% for kandydat in lista_kandydatow %}
+        <div class="cs_article">
+            <div class="slider_image_wrapper"><span></span>
+                <img src="{{ kandydat.zdjecie }}" alt="slider image 1"/>
+            </div>
+            <div class="cs_article_des">
 
-            <h2>{{ kandydat.imie }} {{ kandydat.nazwisko }}</h2>
+                <h2>{{ kandydat.imie }} {{ kandydat.nazwisko }}</h2>
 
-            <p>{{ kandydat.haslo }}</p>
-            <a class="more float_r" href="kandydaci#{{ kandydat.nazwisko }}"><span>Details</span></a>
-        </div>                          
-</div><!-- End cs_article -->               
+                <p>{{ kandydat.haslo }}</p>
+                <a class="more float_r" href="kandydaci#{{ kandydat.nazwisko }}"><span>Details</span></a>
+            </div>
+        </div><!-- End cs_article -->
 
-{% endfor %}
+    {% endfor %}
 {% endblock %}
 
 {% block vote_form %}
+
+    {% if errors %}
+        <h2>Problem! </h2>
+        <ul>
+            {% for error in errors %}
+                <li>{{ error }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+    <p></p>
     <h2>Oddaj głos</h2>
     <div id="contact_form">
-        <form action="" method="get">
+        <form action="." method="post">{% csrf_token %}
             <p>Imie: <input type="text" name="firstName" class="input_field"></p>
 
             <p>Nazwisko: <input type="text" name="lastName" class="input_field"></p>
@@ -40,9 +50,9 @@
             <p>Nr dowodu: <input type="password" name="pass" class="input_field"></p>
 
             <p>Kadydat:
-                <select>
+                <select name="candidate">
                     {% for kandydat in lista_kandydatow %}
-                        <option value="{{ kandydat }}"
+                        <option value="{{ kandydat.id }}"
                                 class="combobox">{{ kandydat.imie }} {{ kandydat.nazwisko }}</option>
                     {% endfor %}
                 </select>
