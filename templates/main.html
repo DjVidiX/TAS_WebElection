@@ -59,7 +59,7 @@
 {% block vote_form %}
     <h2>Oddaj głos</h2>
     <div id="contact_form">
-        <form action="" method="get">
+        <form action="." method="post">{% csrf_token %}
             <p>Imie: <input type="text" name="firstName" class="input_field"></p>
 
             <p>Nazwisko: <input type="text" name="lastName" class="input_field"></p>
@@ -69,9 +69,9 @@
             <p>Nr dowodu: <input type="password" name="pass" class="input_field"></p>
 
             <p>Kadydat:
-                <select>
+                <select name="candidate">
                     {% for kandydat in lista_kandydatow %}
-                        <option value="{{ kandydat }}"
+                        <option value="{{ kandydat.id }}"
                                 class="combobox">{{ kandydat.imie }} {{ kandydat.nazwisko }}</option>
                     {% endfor %}
                 </select>
