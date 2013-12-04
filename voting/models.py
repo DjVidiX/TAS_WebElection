@@ -20,6 +20,9 @@ class Kandydat(models.Model):
     def __unicode__(self):
         return self.imie + " " + self.nazwisko
 
+    def __getitem__(self, item):
+        return self.id
+
 
 class Obywatel(models.Model):
     imie = models.CharField(max_length=30)

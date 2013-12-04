@@ -1,7 +1,7 @@
 # -*- coding: UTF-8 -*- 
 
 from django.shortcuts import render_to_response
-from voting.models import Kandydat
+from voting.models import *
 
 
 def home(request):

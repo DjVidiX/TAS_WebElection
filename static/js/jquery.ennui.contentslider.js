@@ -69,8 +69,8 @@
                     height: o.height
                 })
                 // Add the buttons to move left and right
-                .prepend('<a href="#" class="cs_leftBtn"><img src="static/' + o.leftBtn + '" /></a>')
-                .append('<a href="#" class="cs_rightBtn"><img src="static/' + o.rightBtn + '" /></a>')
+                .prepend('<a href="#" class="cs_leftBtn"><img src="' + o.leftBtn + '" /></a>')
+                .append('<a href="#" class="cs_rightBtn"><img src="' + o.rightBtn + '" /></a>')
                 // Dig down to the article div elements
                 .find('.cs_article')
                 // Set the width and height of the div to the defined size
