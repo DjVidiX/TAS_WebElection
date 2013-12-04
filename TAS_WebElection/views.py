@@ -1,7 +1,8 @@
 # -*- coding: UTF-8 -*- 
+
 from django.shortcuts import render_to_response
-from TAS_WebElection.views import *
 from voting.models import Kandydat
+
 
 def home(request):
     candidates = []
@@ -14,6 +15,7 @@ def home(request):
 def candidates(request):
     lista = ['Marek', 'Lukasz']
     return render_to_response('candidates.html', {'listahtml': lista})
+
 
 def contact(request):
     return render_to_response('contact.html')
