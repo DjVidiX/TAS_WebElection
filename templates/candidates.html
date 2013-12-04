@@ -14,15 +14,19 @@
 
         {% for candidate in candidates %}
             <div class="box_w200">
-                <div class="image_wrapper">
+                <div class="image_wrapper"><span></span>
                     <img alt="{{ candidate.nazwisko }}" src="{{ candidate.zdjecie }}" />
                 </div>
-                <div class="image_cap">
-                    <p>Imie: {{ candidate.imie }}</p>
-                    <p>Nazwisko: {{ candidate.nazwisko }}</p>
-                    <p>Wiek: {{ candidate.wiek }}</p>
-                    <p>Partia: {{ candidate.partia }}</p>
-                    <p>Hasło wyborcze: "{{ candidate.haslo }}"</p>
+                <div class="sb_box_wrapper">
+                    <div class="sb_box2">
+                        <div class="image_cap">
+                            <p>Imie: {{ candidate.imie }}</p>
+                            <p>Nazwisko: {{ candidate.nazwisko }}</p>
+                            <p>Wiek: {{ candidate.wiek }}</p>
+                            <p>Partia: {{ candidate.partia }}</p>
+                            <p>Hasło wyborcze: "{{ candidate.haslo }}"</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         {% endfor %}
