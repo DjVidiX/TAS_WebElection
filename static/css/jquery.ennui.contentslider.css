@@ -93,13 +93,15 @@
 .slider_image_wrapper {
 	float: left;
 	position: relative;
-	width: 410px;
-	height: 250px;
+	width: 200px;
+	height: 205px;
+    left: 100px;
 }
-.slider_image_wrapper span { position: absolute; width: 410px; height: 250px; background: url(../images/templatemo_image_frame_01.png) no-repeat; top: 0; left: 0;}
+.slider_image_wrapper span { position: absolute; width: 200px; height: 205px; background: url(../images/my_image_01.png) no-repeat; top: 0; left: 0;}
 .slider_image_wrapper img {
-	width: 410px;
-	height: 250px;
+	width: 200px;
+	height: 205px;
+    left: 100px;
 }
 
 .cs_leftBtn, .cs_rightBtn {
