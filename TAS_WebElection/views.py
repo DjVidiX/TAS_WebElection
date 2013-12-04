@@ -37,7 +37,7 @@ def candidates(request):
         candidates.append(
             {'id': cand.id, 'zdjecie': cand.zdjecie, 'imie': cand.imie, 'nazwisko': cand.nazwisko,
              'haslo': cand.haslo_wyborcze, 'partia': cand.partia_id})
-    return render_to_response('candidates.html', {'listahtml': candidates})
+    return render_to_response('candidates.html', {'candidates': candidates})
 
 
 def contact(request):
