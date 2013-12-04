@@ -294,3 +294,17 @@ em { color: #fff }
 	border: 1px solid #333333; 
 	background: #000000; 
 }
+
+#contact_form form .combobox {
+    width: 400px;
+    padding: 5px;
+    color: #7b797a;
+    border: 1px solid #333333;
+    background: url('http://s24.postimg.org/lyhytocf5/dropdown.png') no-repeat right #FEFEFE;
+    font-family: Arial, Helvetica, sans-serif;
+    border: #FEFEFE 1px solid;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    -webkit-box-shadow: inset 0px 0px 10px 1px #FEFEFE;
+    box-shadow: inset 0px 0px 10px 1px #FEFEFE;
+}
