@@ -180,6 +180,11 @@ em { color: #fff }
 	width: 600px;
 }
 
+#templatemo_content h1 {
+    color: RED;
+
+}
+
 #templatemo_sidebar {
 	float: right;
 	width: 300px;
