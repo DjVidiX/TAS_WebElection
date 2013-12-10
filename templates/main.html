@@ -25,7 +25,7 @@
                                 <h2>{{ kandydat.imie }} {{ kandydat.nazwisko }}</h2>
 
                                 <p>{{ kandydat.haslo }}</p>
-                                <a class="more float_r" href="kandydaci#{{ kandydat.nazwisko }}"><span>Details</span></a>
+                                <a class="more float_r2" href="kandydaci#{{ kandydat.nazwisko }}"><span>Więcej o kandydacie</span></a>
                             </div>
                         </div><!-- End cs_article -->
 
@@ -102,7 +102,7 @@
 {% block results %}
     <h2>Wyniki</h2>
     <div class="sb_box_wrapper">
-        <div class="sb_box">
+        <div class="sb_box3">
             {% for kandydat in lista_kandydatow %}
                 <p>{{ kandydat.imie }} {{ kandydat.nazwisko }}: {{ kandydat.glosy }} </p>
             {% endfor %}

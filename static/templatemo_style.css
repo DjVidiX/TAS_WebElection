@@ -46,7 +46,10 @@ a.more:hover { text-decoration: none; }
 
 .float_l { float: left }
 .float_r { float: right }
-
+.float_r2 {
+    padding: 80px 0;
+    float: right;
+}
 .image_title { margin-bottom: 10px; font-size: 16px; font-weight: bold; }
 
 .image_wrapper { position: relative; display: inline-block; margin-bottom: 10px; margin-left: 7px }
@@ -115,7 +118,7 @@ em { color: #fff }
 	height: 48px; 
 	color: #333; 
 	text-indent: -10000px; 
-	background: url(images/templatemo_logo.jpg) bottom left no-repeat;
+	background: url(images/logo.png) bottom left no-repeat;
 }
 
 #header_right {
@@ -190,6 +193,11 @@ em { color: #fff }
 	width: 300px;
 }
 
+#templatemo_sidebar2 {
+	float: right;
+	width: 340px;
+}
+
 .templatemo_fwc {
 	clear: both;
 	width: 1002px;
@@ -238,13 +246,26 @@ em { color: #fff }
 
 .sb_box2 {
     width: 150px;
-	height: 295px;
+	height: 315px;
 	padding: 0 30px;
     margin-bottom: 100px;
 	overflow: hidden;
 	line-height: 22px;
 	color: #3a3a3b;
 	background: url(images/my_box1.jpg) no-repeat
+}
+
+.sb_box3 {
+    width: 330px;
+	height: 350px;
+	padding: 30px 25px;
+    margin-top: -10px;
+    margin-bottom: 0;
+	overflow: hidden;
+	line-height: 27px;
+	font-size: 20px;
+	color: #fff5ee;
+	background: url(images/my_box2.jpg) no-repeat
 }
 .templatemo_post {
 	margin: 0px;
