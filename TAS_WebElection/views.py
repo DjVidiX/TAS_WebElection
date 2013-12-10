@@ -61,12 +61,14 @@ def contact(request):
             send_mail(
                 cd['tytul'],
                 cd['wiadomosc'],
-                cd.get('email'),
-                ['sterenczak.marek@gmail.com'],
+                cd.get('email', 'djvidix.ms@gmial.com'),
+                ['djvidix.ms@gmail.com'],
             )
             message = "Dziękujemy za twoja opinie!"
     else:
-        form = ContactForm()
+        form = ContactForm(
+            initial={'subject': 'I love your site!'}
+        )
     return render(request, 'contact.html', {'form': form, 'message': message})
 
 
