@@ -9,10 +9,10 @@
       "is_active": true,
       "is_superuser": true,
       "is_staff": true,
-      "last_login": "2014-01-14T10:57:45.455Z",
+      "last_login": "2014-01-14T14:51:19.249Z",
       "groups": [],
       "user_permissions": [],
-      "password": "pbkdf2_sha256$10000$43mCMq6T7Ztm$Ql1QJfr7YzJtuqOJ2BPQYzHbnSP5T9fPyPNKLiF81Q8=",
+      "password": "pbkdf2_sha256$10000$gICfvpsWVyJh$fKjj7OpfXp1dOhuyyPCR+Cdbnypw8K7UgdQzGuK3ks4=",
       "email": "sterenczak.marek@gmail.com",
       "date_joined": "2013-11-11T13:13:57.656Z"
     }
@@ -27,9 +27,12 @@
       "is_active": true,
       "is_superuser": false,
       "is_staff": true,
-      "last_login": "2013-12-10T12:12:51.135Z",
+      "last_login": "2014-01-14T14:42:11.410Z",
       "groups": [],
       "user_permissions": [
+        37,
+        38,
+        39,
         31,
         32,
         33,
@@ -40,7 +43,7 @@
         41,
         42
       ],
-      "password": "pbkdf2_sha256$10000$fbMLE0pl8nZb$ZqnbO0sJ9CxAZbO0/USFDNGRev0cwV/FEt52xPdmJ7w=",
+      "password": "pbkdf2_sha256$10000$OFnjKsfQ848g$YD314cAh+xmRUML7RmaPsXHs3s5/Ob7b9wuDKjd+kWw=",
       "email": "",
       "date_joined": "2013-12-04T15:00:46Z"
     }

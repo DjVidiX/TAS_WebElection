@@ -8,4 +8,4 @@ class PartiaAddTestCase(TestCase):
 
     def getPartia(self):
         tp = Partia.objects.get(nazwa='Testowa Partia')
-        self.assertEqual(tp.skrot,'ZP')
+        self.assertEqual(tp.skrot,'TP')

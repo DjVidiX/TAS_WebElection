@@ -12,7 +12,7 @@ class Partia(models.Model):
     # testujemy
 
     >>> partia1.nazwa
-    'Pierwsza Partia'
+    'PierwszaPartia'
     >>> partia2.skrot
     'DP'
     """

@@ -14,45 +14,42 @@ class PollsTest(LiveServerTestCase):
         self.browser.quit()
 
     def test_can_create_new_poll_via_admin_site(self):
-        self.browser.get(self.live_server_url + '/admin/')
+        self.browser.get(self.live_server_url + '/administrator/')
 
         body = self.browser.find_element_by_tag_name('body')
-        self.assertIn('Django administration', body.text)
+        self.assertIn('Administracja Django', body.text)
 
         username_field = self.browser.find_element_by_name('username')
-        username_field.send_keys('lukasz')
+        username_field.send_keys('admin')
 
         password_field = self.browser.find_element_by_name('password')
-        password_field.send_keys('Lukasz')
+        password_field.send_keys('admin')
         password_field.send_keys(Keys.RETURN)
 
         body = self.browser.find_element_by_tag_name('body')
-        self.assertIn('Site administration', body.text)
+        self.assertIn('Voting', body.text)
 
         candidates_links = self.browser.find_elements_by_link_text('Obywatels')
-        self.assertEquals(len(polls_links), 2)
 
-        candidates_links[1].click()
+        candidates_links[0].click()
 
         new_candidates_link = self.browser.find_element_by_link_text('Dodaj obywatel')
         new_candidates_link.click()
         
-        first_name_field = self.browser.find_element_by_name('Imie')
+        first_name_field = self.browser.find_element_by_name('imie')
         first_name_field.send_keys("Selenium")
         
-        last_name_field = self.browser.find_element_by_name('Nazwisko')
+        last_name_field = self.browser.find_element_by_name('nazwisko')
         last_name_field.send_keys("Test")
         
         partia_field = self.browser.find_element_by_name('PESEL')
         partia_field.send_keys("56789123456")
         
-        haslo_field = self.browser.find_element_by_name('Nr dowodu')
+        haslo_field = self.browser.find_element_by_name('nr_dowodu')
         haslo_field.send_keys("AGH11223")
 
-        save_button = self.browser.find_element_by_link_text('Zapisz')
+        save_button = self.browser.find_element_by_name('_save')
         save_button.click()
 
-        new_obywatels_links = self.browser.find_elements_by_link_text(
-                "Selenium Test"
-        )
-        self.assertEquals(len(new_poll_links), 1)
+        new_obywatels_links = self.browser.find_elements_by_link_text("Selenium Test")
+        self.assertEquals(len(new_obywatels_links), 1)
