@@ -1,0 +1,48 @@
+[
+  {
+    "pk": 1,
+    "model": "auth.user",
+    "fields": {
+      "username": "admin",
+      "first_name": "",
+      "last_name": "",
+      "is_active": true,
+      "is_superuser": true,
+      "is_staff": true,
+      "last_login": "2014-01-14T10:57:45.455Z",
+      "groups": [],
+      "user_permissions": [],
+      "password": "pbkdf2_sha256$10000$43mCMq6T7Ztm$Ql1QJfr7YzJtuqOJ2BPQYzHbnSP5T9fPyPNKLiF81Q8=",
+      "email": "sterenczak.marek@gmail.com",
+      "date_joined": "2013-11-11T13:13:57.656Z"
+    }
+  },
+  {
+    "pk": 2,
+    "model": "auth.user",
+    "fields": {
+      "username": "lukasz",
+      "first_name": "",
+      "last_name": "",
+      "is_active": true,
+      "is_superuser": false,
+      "is_staff": true,
+      "last_login": "2013-12-10T12:12:51.135Z",
+      "groups": [],
+      "user_permissions": [
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        40,
+        41,
+        42
+      ],
+      "password": "pbkdf2_sha256$10000$fbMLE0pl8nZb$ZqnbO0sJ9CxAZbO0/USFDNGRev0cwV/FEt52xPdmJ7w=",
+      "email": "",
+      "date_joined": "2013-12-04T15:00:46Z"
+    }
+  }
+]
