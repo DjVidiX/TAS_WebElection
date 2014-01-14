@@ -2,6 +2,21 @@ from django.db import models
 
 
 class Partia(models.Model):
+    """
+    Tu znajduja sie testy:
+
+    # Tworzymy Partie
+    >>> partia1 = Partia.objects.create(nazwa='PierwszaPartia', skrot='PP')
+    >>> partia2 = Partia.objects.create(nazwa='DrugaPartia', skrot='DP')
+
+    # testujemy
+
+    >>> partia1.nazwa
+    'Pierwsza Partia'
+    >>> partia2.skrot
+    'DP'
+    """
+
     nazwa = models.CharField(max_length=30)
     skrot = models.CharField(max_length=5)
 
