@@ -70,7 +70,7 @@
 
         <h2>Oddaj głos</h2>
         <div id="contact_form">
-            <form action="index" method="post">{% csrf_token %}
+            <form action="." method="post">{% csrf_token %}
                 <p>Imie: <input type="text" name="firstName" class="input_field"></p>
 
                 <p>Nazwisko: <input type="text" name="lastName" class="input_field"></p>
@@ -85,6 +85,7 @@
                             <option value="{{ kandydat.id }}"
                                     class="combobox">{{ kandydat.imie }} {{ kandydat.nazwisko }}</option>
                         {% endfor %}
+
                     </select>
                 </p>
                 <p><input type="submit" value="Głosuj!" class="submit_btn"></p>

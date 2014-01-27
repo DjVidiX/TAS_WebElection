@@ -19,11 +19,15 @@
                     Please correct the error{{ form.errors|pluralize }} below.
                 </p>
             {% endif %}
-            <form action="" method="post" name="contact">
+
+		{% if message %}
+			<h1> {{ message }}
+		{% endif %}
+            <form action="" method="post" name="contact">{% csrf_token %}
                 <table>
                     {{ form.as_table }}
                 </table>
-                {% csrf_token %}
+                
                 <input type="submit" value="Wyślij">
             </form>
         </div>

@@ -1,5 +1,6 @@
 # -*- coding: UTF-8 -*- 
 
+from django.core.context_processors import csrf
 from django.shortcuts import render_to_response
 from voting.models import *
 from django.shortcuts import render
@@ -8,6 +9,8 @@ from django.core.mail import send_mail
 
 
 def home(request):
+    c = {}
+    c.update(csrf(request))
     errors = []
     candidates = []
     message = ''
@@ -40,7 +43,7 @@ def home(request):
             {'id': cand.id, 'zdjecie': cand.zdjecie, 'imie': cand.imie, 'nazwisko': cand.nazwisko,
              'haslo': cand.haslo_wyborcze, 'glosy': len(l)})
 
-    return render(request, 'main.html', {'lista_kandydatow': candidates, 'errors': errors, 'message': message})
+    return render_to_response('main.html', {'lista_kandydatow': candidates, 'errors': errors, 'message': message})
 
 
 def candidates(request):
@@ -58,12 +61,12 @@ def contact(request):
         form = ContactForm(request.POST)
         if form.is_valid():
             cd = form.cleaned_data
-            send_mail(
-                cd['tytul'],
-                cd['wiadomosc'],
-                cd.get('email', 'djvidix.ms@gmial.com'),
-                ['djvidix.ms@gmail.com'],
-            )
+            #send_mail(
+             #   cd['tytul'],
+              #  cd['wiadomosc'],
+               # cd.get('email', 'djvidix.ms@gmial.com'),
+                #['djvidix.ms@gmail.com'],
+            #)
             message = "Dziękujemy za twoja opinie!"
     else:
         form = ContactForm(
