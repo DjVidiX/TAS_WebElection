@@ -27,12 +27,13 @@ def home(request):
             errors.append(u'Wpisz nr dowodu')
 
         if not errors:
-            if verify_obywatel(request.POST['firstName'], request.POST['lastName'], request.POST['pesel'],
-                               request.POST['pass']):
-                add_vote(request.POST['candidate'])
-                message = "Dziękujemy za twój głos!"
-            else:
-                errors.append("Nie jestes na liscie uprawnionych do glosowania")
+            add_vote(request.POST['candidate'])
+            #if verify_obywatel(request.POST['firstName'], request.POST['lastName'], request.POST['pesel'],
+                               #request.POST['pass']):
+                #add_vote(request.POST['candidate'])
+            message = "Dziękujemy za twój głos!"
+            #else:
+             #   errors.append("Nie jestes na liscie uprawnionych do glosowania")
 
     for cand in Kandydat.objects.all():
         try:

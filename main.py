@@ -1,6 +1,6 @@
 __author__ = 'marek'
 
-import string, random, sqlite3, pycurl
+import string, random, sqlite3, os
 
 
 def randomStringGenerator(size):
@@ -19,7 +19,7 @@ def randomNumberStringGenerator(size):
 def generateUsers():
     file = open("users.txt", "w")
 
-    for i in range(100):
+    for i in range(1100,1200):
         user_list = []
         user_list.append(i.__str__())
         name = randomStringGenerator(6)
@@ -33,7 +33,7 @@ def generateUsers():
         glosowal = False
         user_list.append(glosowal.__str__())
         user_list.append("\n")
-        file.write(", ".join(user_list))
+        file.write(",".join(user_list))
 
 
     file.close()
@@ -61,21 +61,24 @@ def main():
         # file = open("users.txt", 'wba')
         # generateUsers(file)
     lines = []
-    for line in file.readline():
+    for line in file.readlines():
         values = line.split(",")
         values.pop()
         lines.append(values)
 
-    c = pycurl.Curl()
-    c.setopt(c.URL, "localhost:8000")
+    #c = pycurl.Curl()
+    #c.setopt(c.URL, "localhost:8000")
 
-    # for line in lines:
-    cmd = 'firstName=%s&lastName=%s&pesel=%s&password=%s' % (lines[1], lines[2], lines[3], lines[4])
+    for line in lines:
+        cmd = '"firstName=%s&lastName=%s&pesel=%s&pass=%s&candidate=2"' % (line[1], line[2], line[3], line[4])
+    
+        os.system("curl -d " + cmd + " http://127.0.0.1:8000")
+        
     # c.setopt(c.POSTFIELDS, cmd)
-    c.setopt(c.COOKIEFILE, '')
-    c.setopt(c.VERBOSE, False)
+    #c.setopt(c.COOKIEFILE, '')
+    #c.setopt(c.VERBOSE, False)
 
-    c.perform()
+    # c.perform()
 
 
 
