@@ -7,10 +7,11 @@ from django.shortcuts import render
 from TAS_WebElection.forms import ContactForm
 from django.core.mail import send_mail
 
+from django.http import HttpResponse
+from django.template import RequestContext, loader
+
 
 def home(request):
-    c = {}
-    c.update(csrf(request))
     errors = []
     candidates = []
     message = ''
@@ -43,7 +44,7 @@ def home(request):
             {'id': cand.id, 'zdjecie': cand.zdjecie, 'imie': cand.imie, 'nazwisko': cand.nazwisko,
              'haslo': cand.haslo_wyborcze, 'glosy': len(l)})
 
-    return render_to_response('main.html', {'lista_kandydatow': candidates, 'errors': errors, 'message': message})
+    return render_to_response('main.html', {'lista_kandydatow': candidates, 'errors': errors, 'message': message}, context_instance=RequestContext(request))
 
 
 def candidates(request):
